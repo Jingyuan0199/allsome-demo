@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ec">
+  <meta name="description" content="有点东西，一群同事的创作集合。逛逛小产品、Skill 和日常灵感，也把你的好东西带来。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>有点东西 — 这儿，有点东西。</title>
+  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';try{document.documentElement.dataset.language=localStorage.getItem('allsome-language')==='en'?'en':'zh'}catch{document.documentElement.dataset.language='zh'}</script>
+
+
+  <link rel="stylesheet" href="styles.css?v=55877283ecfa">
+  <link rel="stylesheet" href="hero.css?v=55877283ecfa">
+<link rel="stylesheet" href="discovery.css?v=55877283ecfa">
+<link rel="stylesheet" href="community.css?v=55877283ecfa">
+<link rel="stylesheet" href="editorial.css?v=55877283ecfa">
+<link rel="stylesheet" href="stories.css?v=55877283ecfa">
+
+<link rel="stylesheet" href="finder.css?v=55877283ecfa">
+<link rel="stylesheet" href="submission.css?v=55877283ecfa">
+<link rel="stylesheet" href="portfolio.css"></head>
+<body data-edition="discovery3"><svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><filter id="lettering-ink" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -4 -4 -4 0 9.5"/></filter></defs></svg>
+<a class="skip-link" href="#catalog">跳到作品</a>
+<header class="site-header">
+ <a class="brand" href="#top" aria-label="有点东西，返回首页"><span class="shared-brand-icon" aria-hidden="true"><img src="assets/brand-lockup-q92.webp" width="2172" height="724" alt=""></span><span class="brand-image"><img src="assets/brand-lockup-q92.webp" width="2172" height="724" alt="有点东西"></span><span class="brand-en" data-no-translate aria-hidden="true"><img data-src="assets/english-wordmark-lowercase-q90.jpg" width="1536" height="1024" alt="allsome"></span></a>
+ <nav aria-label="主导航"><a href="#explore" data-nav="explore">找东西</a><a href="#stories" data-nav="stories">看分享</a><a href="#makers" data-nav="makers">找创作者</a></nav>
+ <details class="compact-nav"><summary aria-label="打开导航"><span aria-hidden="true">☰</span></summary><nav aria-label="手机导航"><a href="#explore">找东西</a><a href="#stories">看分享</a><a href="#makers">找创作者</a></nav></details>
+ <div class="header-actions"><button id="language-toggle" class="language-toggle" type="button" data-no-translate aria-label="Switch to English">EN</button><a class="header-share" href="#share" data-no-translate><span class="header-share-label">分享好东西</span> <span aria-hidden="true">＋</span></a><button id="login-trigger" class="login-trigger" type="button">登录</button><details class="account-menu" id="account-menu" hidden><summary id="account-summary" aria-label="我的账号"></summary><div class="account-popover"><p id="account-name"></p><a href="#mine">我的好东西</a><a href="#share">分享新作品</a><button type="button" id="sign-out">返回首页</button></div></details></div>
+</header>
+<main id="app-main"><div id="home-view">    <section class="hero-track" id="top" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <div class="hero-copy">
+          <p class="eyebrow">一些同事，一些新点子。</p>
+
+          <h1 id="hero-title"><span class="sr-only">这儿，有点东西。</span><span class="headline-en" aria-hidden="true" data-no-translate><img data-src="assets/english-type-approved-b5-q92.webp" width="1383" height="1137" alt=""></span><span class="headline-image"><img src="assets/headline-here-v2-q92.webp" width="2172" height="724" alt="" fetchpriority="high" decoding="async"></span></h1>
+          <p class="hero-description">找到同事做好的办法，也分享你的创作。</p>
+        </div>
+        <div class="float float-art" data-float="art" aria-hidden="true"><span class="idea-fragment idea-art"></span></div>
+        <div class="float float-code" data-float="code" aria-hidden="true"><span class="idea-fragment idea-code"></span></div>
+        <div class="float float-orbit" data-float="orbit" aria-hidden="true"><span class="idea-fragment idea-orbit"></span></div>
+        <div class="float float-plane-new" data-float="plane" aria-hidden="true"><span class="creation-fragment creation-plane"></span></div>
+        <div class="float float-palette" data-float="palette" aria-hidden="true"><span class="creation-fragment creation-palette"></span></div>
+        <div class="float float-map" data-float="map" aria-hidden="true"><span class="creation-fragment creation-map"></span></div>
+        <div class="scene-scroll" id="scene-scroll">
+          <div class="scene" id="scene" aria-busy="true" aria-describedby="help">
+            <img loading="eager" fetchpriority="high" decoding="async" class="fallback" src="assets/idle-q92.webp" width="2060" height="763" alt="五位同事围着长桌自由讨论：长卷发设计师、前端工程师、展示手绘脑图的技术创作者、产品经理和端着咖啡的旁听者。桌边有水果，也为你留着一张空椅子。">
+            <canvas id="stage" width="2060" height="763" aria-hidden="true"></canvas>
+            <svg id="targets" viewBox="0 0 2060 763" aria-label="和桌边的同事打个招呼"></svg>
+          </div>
+        </div>
+        <a class="scroll-invitation" href="#catalog"><span>往下逛逛</span><span class="down-arrow" aria-hidden="true">↓</span></a>
+        <section class="finder" id="finder" aria-label="站内助手" data-no-translate>
+          <label class="finder-entry-label" id="finder-entry-label" for="finder-input">一起找找看</label>
+          <form id="finder-form" role="search"><textarea id="finder-input" rows="1" maxlength="300" autocomplete="off" enterkeyhint="send"></textarea><button id="finder-send" type="submit">找一找</button></form>
+          <div id="finder-context" hidden></div>
+          <div id="finder-examples" class="finder-examples"></div>
+          <button id="finder-resume" type="button" hidden>继续查看结果</button>
+          <div id="finder-panel" hidden>
+            <div class="finder-panel-head"><h2 id="finder-title" tabindex="-1"></h2><button id="finder-close" type="button">收起</button></div>
+            <div id="finder-scroll"><div id="finder-response"></div><div id="finder-suggestions"></div><div id="finder-actions"></div></div>
+          </div>
+          <p id="finder-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+        </section>
+        <div id="asset-error" class="asset-error" role="alert" hidden>动作暂时没加载出来。<button id="retry" type="button">再试一次</button></div>
+      </div>
+    </section>
+    <p id="help" class="sr-only">鼠标快速经过、轻点或按 Tab 聚焦人物即可唤醒，人物全身变彩并看向你。Enter 或空格重播招呼。向下滚动时全员变彩欢迎你，上滑回到顶部恢复单人互动。</p>
+    <button id="reset" hidden type="button">回到聊天</button>
+    <p id="live-status" class="sr-only" aria-live="polite"></p>
+
+
+<section class="catalog section-width" id="catalog" aria-labelledby="catalog-title">
+ <div class="section-heading catalog-heading home-content-heading"><div><p class="section-kicker">PICKED FOR YOU</p><h2 id="catalog-title">大家的<span class="serif-word">好东西。</span></h2></div><a class="section-link" href="#explore">查看全部作品 ↗</a></div>
+ <div class="catalog-toolbar"><div class="filters" id="home-filters" role="group" aria-label="首页作品类型"></div></div>
+ <div class="product-grid" id="product-grid"></div><p class="empty-state" id="home-empty" hidden>这个分类还没有精选作品，去全部作品里逛逛吧。</p>
+
+</section>
+<section class="stories-home section-width" id="stories-home" aria-labelledby="stories-title"><div class="section-heading home-content-heading"><div><p class="section-kicker">HOW IT CAME TO LIFE</p><h2 id="stories-title">这些东西，<span class="serif-word">怎么做出来的？</span></h2></div><a class="section-link" href="#stories">看看全部分享 ↗</a></div><div class="filters" id="home-story-filters" role="group" aria-label="首页分享类型"></div><div id="home-stories"></div></section>
+<section class="creators section-width" id="creators" aria-labelledby="creators-title">
+ <div class="section-heading creator-heading home-content-heading"><div><p class="section-kicker">MEET THE MAKERS</p><h2 id="creators-title">好东西，背后都是<span class="serif-word">有趣的人。</span></h2></div><a class="section-link" href="#makers">全部创作者 <span aria-hidden="true">↗</span></a></div>
+ <div class="maker-toolbar"><div class="maker-ranking" id="home-maker-sort" role="group" aria-label="创作者排序"><button type="button" data-maker-sort="works" aria-pressed="true">作品最多</button><button type="button" data-maker-sort="likes" aria-pressed="false">获赞最多</button></div><span class="stars-status" data-stars-status role="status"></span></div>
+ <div class="creator-carousel"><div class="creator-track" id="home-makers" aria-label="推荐创作者"></div><div class="carousel-controls"><div><button type="button" id="makers-prev" aria-label="上一组创作者">←</button><button type="button" id="makers-next" aria-label="下一组创作者">→</button></div></div></div>
+</section>
+    <section class="about" id="about" aria-labelledby="about-title"><div class="about-inner section-width"><div class="about-heading"><p class="section-kicker">A SIDE PROJECT, TOGETHER.</p><h2 id="about-title">不必是大作。<br>有意思，<span>就带来。</span></h2></div><div class="about-copy"><p>这里是「有点东西」，<br>一群同事自发凑起来的创作角。</p><p>一个省下十分钟的小工具，一段让 Agent 更懂你的 Skill，或是和工作没什么关系的小玩意。<br>只要你觉得有点意思，就值得和大家分享。</p><button class="ink-button" type="button" data-share>带上我的好东西 <span aria-hidden="true">↗</span></button><span class="about-note">桌边的位置，一直给你留着。</span><label class="motion-toggle about-motion"><input type="checkbox" id="reduced-motion"> 少一点动效</label></div><span class="about-leaf sprite sprite-leaf" aria-hidden="true"></span></div></section>
+
+</div><section class="directory-view section-width" id="directory-view" tabindex="-1" hidden></section></main>
+<a class="floating-back" href="#top" aria-label="回到首页顶部" hidden><span class="floating-tool-icon" aria-hidden="true">↑</span><span>返回顶部</span></a>
+<dialog class="login-dialog" id="login-dialog" aria-labelledby="login-title"><div class="dialog-top"><span class="section-kicker">COME ON IN.</span><button class="close-button" type="button" data-close aria-label="关闭登录">×</button></div><div class="login-content"><span class="login-symbol" aria-hidden="true">＋</span><h2 id="login-title">你也有点东西。</h2><p id="login-description">使用企业 Google 账号登录，<br>把你的创作带到这张桌上。</p><div id="google-signin"></div><div class="login-unavailable" id="login-unavailable" hidden><strong>企业登录暂未开放</strong><p>现在可以自由逛逛。账号接通后，就能投稿和为喜欢的作品点赞。</p></div><p class="login-footnote">头像和名称直接使用 Google 账号资料。</p><p class="form-feedback" id="login-feedback" role="status"></p><button class="text-link" id="retry-login" type="button" hidden>重新连接</button></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<template id="cover-credits"><div class="cover cover-editor"><span class="cover-corner">A LITTLE ROOM FOR THE NEXT IDEA.</span><p class="poster-quote">看清额度，<br>安排下一步。</p></div></template><template id="cover-bot"><div class="cover cover-bot"><span class="cover-corner">DESIGN, TOGETHER.</span><p class="poster-quote">“这版，<br>有点感觉了。”</p><span class="cover-foot">一点想法 <span aria-hidden="true">↗</span> 一个方向</span><span class="cover-sticker sprite sprite-note" aria-hidden="true"></span></div></template><template id="cover-clone"><div class="cover cover-clone"><span class="cover-corner">LESS REPEAT. MORE CREATE.</span><div class="clone-type" aria-hidden="true"><span>git clone</span><span>git clone</span><span>git clone <b>↵</b></span></div><span class="cover-foot">重复的事，少做一点。</span></div></template><template id="cover-editor"><div class="cover cover-editor"><span class="cover-corner">A LITTLE SKILL. A CLEARER IDEA.</span><div class="editor-type" aria-hidden="true"><span>&lt;idea&gt;</span><strong>看得清，<br>才改得好。</strong><span>&lt;/idea&gt;</span></div><span class="cover-foot">文档 × 代码 × Agent</span></div></template><template id="cover-quota"><div class="cover cover-quota"><span class="cover-corner">MAKE ROOM FOR THE NEXT IDEA.</span><p class="quota-type">留点额度，<br><span>给下个灵感。</span></p><span class="cover-foot">工作节奏，心里有数。</span><span class="quota-symbol" aria-hidden="true">↗</span></div></template><template id="cover-meeting"><div class="cover cover-meeting"><span class="cover-corner">GOOD IDEAS DESERVE AN ENCORE.</span><p class="meeting-type">聊过的，<br>别错过。</p><div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="cover-foot">让好点子，留得下来。</span></div></template>
+<noscript><p class="no-script">开启 JavaScript 后，可以浏览完整作品目录、查看创作者和参与桌边互动。</p></noscript>
+<div id="app-load-status" role="alert" hidden data-no-translate><span></span><button type="button"></button></div>
+<script>
+(()=>{
+ const status=document.getElementById('app-load-status');
+ const timer=setTimeout(()=>{
+  if(document.documentElement.dataset.appReady==='true')return;
+  const en=document.documentElement.lang==='en';
+  status.querySelector('span').textContent=en?'Content could not finish loading. Please retry.':'内容未能完成加载，请重试。';
+  const retry=status.querySelector('button');retry.textContent=en?'Reload content':'重新加载内容';
+  retry.onclick=()=>{const url=new URL(location.href);url.searchParams.set('reload',Date.now());location.replace(url.href);};status.hidden=false;
+ },8000);
+ addEventListener('appready',()=>{clearTimeout(timer);status.hidden=true;},{once:true});
+})();
+</script>
+<script type="module" src="i18n.js?v=55877283ecfa"></script>
+<script type="module" src="app.js?v=55877283ecfa"></script>
+<script type="module" src="finder.js?v=55877283ecfa"></script><script type="module" src="portfolio.js"></script></body></html>

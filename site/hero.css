@@ -1,0 +1,208 @@
+/* One paper surface ties the illustration, foreground scraps and catalog together. */
+:root {
+  --page-paper-color: #f6f4ec;
+  --page-paper-image: url('assets/drafting-paper-v1-q94.webp');
+  --page-paper-size: cover;
+  background: var(--page-paper-color);
+}
+body {
+  position: relative;
+  isolation: isolate;
+  background: var(--page-paper-color);
+}
+/* The full sheet stays continuous as sections pass over it; no tiled seams. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--page-paper-color) var(--page-paper-image) center / var(--page-paper-size) no-repeat;
+}
+.hero-stage {
+  background-color: var(--page-paper-color);
+  background-image: var(--page-paper-image);
+  background-size: var(--page-paper-size);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Blend the complete transformed layers, not their isolated inner images.
+   This removes the white rectangle from every composed pose without changing
+   frame registration. White details take on the same light paper tone. */
+.hero-copy,
+.scene-scroll {
+  mix-blend-mode: multiply;
+}
+.about {
+  background-image: var(--page-paper-image);
+  background-size: var(--page-paper-size);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+.about::before {
+  background-color: var(--page-paper-color);
+  background-image: var(--page-paper-image);
+  background-size: var(--page-paper-size);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.about-leaf { mix-blend-mode: multiply; }
+
+/* Hero art direction: a quiet conversation, with unfinished ideas in the foreground. */
+.hero-track {
+  height: calc(100svh + clamp(420px, 66svh, 680px));
+}
+.hero-stage {
+  height: 100svh;
+  min-height: 620px;
+  max-height: none;
+  perspective: 1400px;
+}
+.hero-copy {
+  top: clamp(98px, 13svh, 158px);
+  z-index: 2;
+  transform-origin: 50% 30%;
+}
+.hero-copy .eyebrow {
+  font-size: 13px;
+  letter-spacing: .12em;
+}
+.headline-image {
+  width: min(760px, 76vw);
+  max-width: none;
+  margin: 16px auto 15px;
+}
+.hero-description {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.scene-scroll {
+  width: min(80vw, 1120px, calc((100svh - 450px) * 2.7));
+  max-width: none;
+  top: 44%;
+  bottom: auto;
+  z-index: 3;
+  transform-origin: 50% 70%;
+}
+.scene {
+  transform: scale(1.08);
+  transform-origin: 50% 100%;
+}
+.scene-hint {
+  top: auto;
+  bottom: -35px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.welcome-note {
+  top: 26%;
+  z-index: 1;
+  font-size: 18px;
+}
+.welcome-note span { font-size: clamp(32px, 3.5vw, 46px); }
+.scroll-invitation { bottom: 22px; font-size: 13px; }
+.float {
+  z-index: 5;
+  opacity: 1;
+  filter: none;
+  transform-origin: 50% 50%;
+  mix-blend-mode: multiply;
+}
+.float span { animation: idea-breath 9s ease-in-out infinite; }
+.idea-fragment {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  background: url('assets/foreground-collage-v2-q94.webp') no-repeat;
+  background-size: 300% 100%;
+}
+.idea-art { background-position: 0% 50%; }
+.idea-code { background-position: 50% 50%; }
+.idea-orbit { background-position: 100% 50%; }
+.float-art {
+  width: clamp(170px, 19vw, 285px);
+  left: -4%;
+  top: 34%;
+  transform: rotate(-15deg);
+}
+.float-code {
+  width: clamp(125px, 13vw, 198px);
+  right: 5%;
+  top: 24%;
+  transform: rotate(12deg);
+}
+.float-code span { animation-delay: -3s; }
+.float-orbit {
+  width: clamp(190px, 24vw, 370px);
+  right: -12%;
+  top: 67%;
+  transform: rotate(-12deg);
+}
+.float-orbit span { animation-delay: -6s; }
+.scene .fallback { filter: grayscale(calc(1 - var(--group-color, 0))); }
+@keyframes idea-breath {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-9px) rotate(2deg); }
+}
+@media (min-width: 1700px) {
+  .headline-image { width: 840px; }
+  .scene-scroll { width: min(76vw, 1250px, calc((100svh - 450px) * 2.7)); }
+  .float-art { left: 0; }
+  .float-code { right: 10%; }
+  .float-orbit { right: -6%; }
+}
+@media (max-height: 760px) and (min-width: 761px) {
+  .hero-copy { top: 86px; }
+  .headline-image { width: min(660px, 70vw); margin-top: 10px; margin-bottom: 10px; }
+  .hero-copy .eyebrow { font-size: 12px; }
+  .hero-description { font-size: 13px; }
+  .scene-scroll { width: min(78vw, calc((100svh - 415px) * 2.7)); top: 44%; }
+  .float-art { width: 180px; top: 36%; left: -3%; }
+  .float-code { width: 125px; top: 25%; }
+  .float-orbit { width: 230px; top: 68%; right: -9%; }
+}
+@media (max-width: 760px) {
+  .hero-track { height: calc(100svh + clamp(380px, 58svh, 580px)); }
+  .hero-stage { min-height: 590px; }
+  .hero-copy { top: clamp(118px, 15svh, 155px); }
+  .hero-copy .eyebrow { font-size: 12px; letter-spacing: .055em; }
+  .headline-image { width: 77vw; max-width: 560px; margin: 18px auto 17px; }
+  .hero-description { font-size: 13px; line-height: 1.9; }
+  .scene-scroll { width: 82vw; max-width: 630px; top: 50%; bottom: auto; }
+  .scene-hint { top: auto; bottom: -38px; font-size: 11px; }
+  .welcome-note { top: 32%; font-size: 16px; }
+  .welcome-note span { font-size: 37px; }
+  .float-art { width: 170px; left: -7%; top: 36%; }
+  .float-code { width: 122px; right: -1%; top: 33%; }
+  .float-orbit { width: 205px; right: -16%; top: 78%; }
+  .scroll-invitation { bottom: 7%; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .headline-image { width: 82vw; }
+  .hero-copy { top: 17%; }
+  .hero-copy .eyebrow { font-size: 11px; }
+  .hero-description { font-size: 12px; }
+  .scene-scroll { width: 89vw; top: 52%; }
+  .float-art { width: 126px; left: -13%; top: 36%; }
+  .float-code { width: 92px; right: -3%; top: 37%; }
+  .float-orbit { width: 158px; right: -21%; top: 73%; }
+  .welcome-note { top: 33%; font-size: 14px; }
+  .welcome-note span { font-size: 31px; margin-right: 8px; }
+  .scene-hint { bottom: -33px; font-size: 10px; }
+  .scroll-invitation { bottom: 10%; }
+}
+@media (max-height: 600px) and (min-width: 761px) {
+  .hero-stage { min-height: 570px; }
+  .hero-copy { top: 77px; }
+  .headline-image { width: 490px; }
+  .scene-scroll { width: min(67vw, 675px); top: 46%; }
+  .float-art { width: 138px; }
+  .float-code { width: 105px; }
+  .float-orbit { width: 180px; right: -8%; }
+}
+
+/* Center the Chinese title at its reviewed size; retain proportional mobile sizing. */
+.hero-copy .headline-image{width:min(600px,82vw);margin-left:auto;margin-right:auto}
+.hero-copy .headline-image img{width:100%;height:auto;left:50%;transform:translate(-50%,-50%)}

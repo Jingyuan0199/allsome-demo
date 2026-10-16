@@ -1,0 +1,304 @@
+.finder{position:absolute;z-index:8;bottom:30px;left:50%;transform:translateX(-50%);width:min(540px,calc(100% - 40px));background:#fffdf5;border:1px solid #aaa995;border-radius:12px 9px 13px 8px;box-shadow:3px 4px 0 #d6d2bd66;pointer-events:auto}
+#finder-form{display:flex;gap:12px;align-items:center;padding:10px 12px 10px 18px}#finder-input{background:none;border:0;outline:0;min-width:0;flex:1;font:inherit;font-size:14px;color:#27382e;padding:6px 0}.finder:focus-within{outline:2px solid #648874;outline-offset:3px}.finder-mark{color:#b95335;font-size:24px}#finder-send{border:0;border-radius:50%;background:#273c30;color:white;width:32px;height:32px;font-size:22px;cursor:pointer}#finder-panel{padding:18px 20px 8px;max-height:330px;overflow:auto}.finder-panel-head{display:flex;justify-content:space-between;align-items:center}#finder-close{background:none;border:0;font-size:25px;cursor:pointer}#finder-note{font-size:11px;color:#747b70;margin:6px 0 14px}#finder-response{font-size:14px;line-height:1.7}#finder-response a{display:block;padding:8px 0;border-bottom:1px solid #deded0}#finder-suggestions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}#finder-suggestions button{border:1px solid #d3d5c6;border-radius:15px;background:#eef0e5;padding:6px 10px;font:inherit;font-size:12px;cursor:pointer}@media(max-width:700px){.finder{bottom:18px}#finder-panel{max-height:260px}}
+
+/* The finder uses the same paper, ink and brick-red accents as the site. */
+
+.finder{border:1px solid #aaa995;border-radius:2px;box-shadow:4px 4px 0 #d6d2bd80}
+.finder:focus-within{outline:1px solid #4d6552;outline-offset:3px}
+#finder-form{padding:10px 12px 10px 20px;gap:16px}
+#finder-send{flex-shrink:0;width:36px;height:36px;border:1px solid #783e2e;border-radius:0;background:#b64c30;box-shadow:2px 2px 0 #d8c7bb;color:#fffdf5}
+#finder-send:hover{background:#a33e25}
+#finder-panel{border-bottom:1px solid #dedbd0}
+#finder-suggestions button{border-radius:2px;background:#f6f3e8;border-color:#c8c5b5;color:#304536}
+#finder-suggestions button:hover{background:#e9ecdf;border-color:#87947d}
+
+
+
+@media(max-width:700px){#finder-input{font-size:16px}#finder-form{padding-left:14px}}
+
+/* Balance the hero around its two focal points: the illustration and finder. */
+.hero-stage .hero-copy{top:clamp(82px,9svh,116px)}
+.hero-stage .float-art{left:-5%;top:29%}
+.hero-stage .float-code{right:-3%;top:29%}
+.hero-stage .float-orbit{right:-8%;top:73%}
+.hero-stage .float-plane-new{left:2%;top:80%}
+.hero-stage .float-map{right:17%;top:83%}
+.finder{width:min(680px,calc(100% - 48px));bottom:clamp(28px,5svh,56px);border-color:#7f886f;box-shadow:5px 5px 0 #c8cbb580}
+.finder-entry-label{display:block;margin:0;padding:15px 20px 0;font-size:14px;font-weight:650;color:#344937;letter-spacing:.02em}
+#finder-form{padding:10px 14px 15px 20px}
+#finder-input{font-size:16px}
+#finder-send{width:42px;height:42px;font-size:25px}
+@media(max-width:760px){
+ .hero-stage .hero-copy{top:94px}
+ .hero-stage .float-art{left:-9%}
+ .hero-stage .float-code{right:-6%}
+ .hero-stage .float-orbit{right:-15%}
+ .finder{width:calc(100% - 40px);bottom:32px}
+ .finder-entry-label{font-size:13px;padding:12px 14px 0}
+ #finder-form{padding:8px 12px 12px 14px;gap:10px}
+ #finder-send{width:38px;height:38px}
+}
+@media(max-height:730px) and (min-width:761px){
+ .hero-stage .hero-copy{top:76px}
+ .finder{bottom:18px}
+ .finder-entry-label{padding-top:10px}
+ #finder-form{padding-top:6px;padding-bottom:10px}
+}
+.hero-stage .float-palette{left:11%;top:8%}
+@media(max-width:760px){.hero-stage .float-palette{left:2%;top:10%;width:56px}}
+
+/* Intro copy and scroll cue remain visible before the first transition. */
+.hero-stage .hero-copy{top:clamp(110px,12svh,150px)}
+.hero-copy .eyebrow{margin:0 16px 10px}
+.hero-stage .scroll-invitation{display:flex;bottom:8px;gap:9px;font-size:12px;padding:6px 12px}
+.hero-stage .scroll-invitation .down-arrow{animation:none;font-size:21px}
+.finder{bottom:56px}
+@media(max-width:760px){.hero-stage .hero-copy{top:104px}.hero-copy .eyebrow{font-size:11px}.finder{bottom:52px}.hero-stage .scroll-invitation{bottom:8px}}
+@media(max-height:730px) and (min-width:761px){.hero-stage .hero-copy{top:94px}.hero-copy .eyebrow{font-size:11px;margin-bottom:4px}.finder{bottom:46px}.hero-stage .scroll-invitation{bottom:4px}}
+
+.finder-examples{display:flex;gap:14px;flex-wrap:wrap;padding:0 20px 12px}.finder-examples button{background:none;border:0;border-bottom:1px solid #aaa996;padding:0 0 3px;color:#405444;font:inherit;font-size:12px;cursor:pointer}
+
+/* Results expand upward in the same illustration overlay, without adding a section. */
+.finder:focus-within{outline:none}
+#finder-input:focus-visible{outline:none}
+.finder.is-expanded #finder-panel{max-height:min(290px,calc(58svh - 155px));overflow:auto;overscroll-behavior:contain;padding:14px 20px 8px}
+.finder.is-expanded #finder-form{padding:10px 14px 12px 20px}
+.finder.is-expanded #finder-note{margin:4px 0 0;font-size:10px}
+.finder-query{margin:7px 0 2px;color:#606759;font-size:12px;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.finder-result-intro{margin:8px 0}
+#finder-response .finder-result-card{display:grid;gap:2px;padding:8px 0;text-decoration:none}
+.finder-result-card strong{font-size:14px;font-weight:600}
+.finder-result-card>span{color:#606759;font-size:12px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+#finder-response .finder-browse{border:0;font-size:11px;padding:6px 0 0;color:#405444}
+.finder-problem-card{margin-top:7px;padding:10px;background:#f4efdf;border:1px solid #d8cfb8}.finder-problem-card small{display:block;margin-bottom:3px;color:#8b644b}.finder-problem-action{margin-top:8px!important;padding:9px 11px!important;background:#a8482e;color:#fffdf5!important;border:0!important;text-align:center;font-size:12px}.finder-problem-action:hover{background:#943c26}
+.finder-result-card:hover strong{text-decoration:underline}
+#finder-suggestions:empty{display:none}
+.finder [hidden]{display:none!important}
+@media(max-width:760px){.finder.is-expanded #finder-panel{padding:12px 14px 6px}.finder.is-expanded #finder-form{padding:8px 12px 10px 14px}}
+
+/* Shared resting and result states use a soft focus treatment at every size. */
+.finder{border-radius:5px;transition:border-color 160ms ease,box-shadow 160ms ease}
+.finder:focus-within{border-color:#526b56;box-shadow:0 0 0 3px #526b5614,0 5px 14px #34493714}
+@media(prefers-reduced-motion:reduce){.finder{transition:none}}
+
+/* Task search: keep the editable query before the results in visual and DOM order. */
+.finder{overflow:hidden;--finder-result-height:290px}
+.finder-entry-label{padding:13px 20px 0;font-size:14px}
+#finder-form,.finder.is-expanded #finder-form{padding:8px 14px 6px 20px;gap:10px}
+#finder-input{height:38px;padding:6px 0}
+#finder-input::-webkit-search-cancel-button{display:none}
+#finder-send{width:auto;min-width:68px;height:38px;padding:0 13px;font:inherit;font-size:13px;font-weight:600;box-shadow:2px 2px 0 #d8c7bb}
+#finder-clear,#finder-close,#finder-resume{border:0;background:transparent;color:#405444;font:inherit;font-size:12px;min-height:32px;padding:5px 7px;cursor:pointer}
+#finder-clear{flex-shrink:0}
+#finder-close{font-size:12px}
+#finder-note,.finder.is-expanded #finder-note{margin:0;padding:0 20px 10px;font-size:11px;color:#646d5f}
+.finder-examples{gap:8px 14px;padding:0 20px 10px}
+.finder-examples button{min-height:28px;padding:3px 0;font-size:12px}
+#finder-resume{margin:0 13px 8px;text-decoration:underline;text-underline-offset:4px}
+#finder-panel,.finder.is-expanded #finder-panel{padding:0;max-height:none;overflow:visible;border:0;border-top:1px solid #dedbd0}
+.finder-panel-head{padding:8px 13px 2px 20px;gap:12px}
+#finder-title{margin:0;font-size:13px;font-weight:600;line-height:1.5;color:#344937;scroll-margin-top:80px}
+#finder-scroll{padding:0 20px 12px;max-height:var(--finder-result-height);overflow-y:auto;overscroll-behavior:contain;scroll-padding:8px}
+.finder-result-list{list-style:none;margin:0;padding:0}
+#finder-response .finder-result-card{display:block;padding:10px 0;border-bottom:1px solid #e4e0d5;text-decoration:none}
+.finder-card-heading{display:flex;align-items:baseline;gap:10px}
+.finder-card-heading strong{min-width:0;font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+.finder-kind{margin-left:auto;flex-shrink:0;color:#68725f;font-size:10px;white-space:nowrap}
+.finder-description{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:4px;font-size:12px;line-height:1.5;color:#606759}
+.finder-result-intro{margin:7px 0 10px;font-size:13px;line-height:1.65}
+#finder-suggestions{gap:6px;margin:6px 0}
+#finder-suggestions button,#finder-suggestions a{font-size:12px;min-height:32px;padding:6px 9px;border:1px solid #c8c5b5;background:#f6f3e8;border-radius:3px;line-height:1.5;color:#304536;text-decoration:none}
+.finder-more{display:flex;flex-wrap:wrap;gap:4px 18px;padding-top:5px}
+.finder-more a,.finder-feedback{display:inline-block;font-size:12px;line-height:1.5;min-height:28px;padding:5px 0;color:#405444;text-underline-offset:3px}
+.finder-feedback{color:#765644}
+.finder a:focus-visible,.finder button:focus-visible,#finder-title:focus-visible{outline:2px solid #526b56;outline-offset:2px;border-radius:2px}
+.finder-result-card:hover{background:#f3f2e9}
+@media(max-width:760px){
+ .finder-entry-label{padding:11px 14px 0}
+ #finder-form,.finder.is-expanded #finder-form{padding:6px 10px 5px 14px;gap:6px}
+ #finder-input{font-size:16px}
+ #finder-send{min-width:58px;padding:0 9px}
+ #finder-clear{padding:5px 3px;font-size:11px}
+ #finder-note,.finder.is-expanded #finder-note{padding:0 14px 8px}
+ .finder-examples{padding:0 14px 8px;gap:4px 12px}
+ .finder-panel-head{padding:7px 9px 2px 14px}
+ #finder-scroll{padding:0 14px 10px}
+ .finder-third-result{display:none}
+ .finder-card-heading strong{font-size:13px}
+ .finder-description{font-size:12px}
+ .finder-feedback{font-size:11px}
+}
+.finder-result-card .finder-card-heading{display:flex;-webkit-line-clamp:unset;overflow:visible;color:#27382e}
+.finder-result-card .finder-description{display:-webkit-box;-webkit-line-clamp:2;font-size:12px;line-height:1.5}
+
+.finder{transform:translate(-50%,var(--finder-shift,0px))}
+
+/* Continuous discovery keeps a compact, editable request above the result list. */
+#finder-form,.finder.is-expanded #finder-form{padding-bottom:12px}
+.finder-try{font-size:12px;color:#747a6c;align-self:center}
+#finder-context{padding:0 20px 10px}
+.finder-context-head{display:flex;align-items:center;gap:10px;color:#68725f;font-size:11px;margin-bottom:5px}
+.finder-context-head button{font:inherit;background:transparent;border:0;color:#405444;min-height:28px;padding:3px 4px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.finder-context-head button:first-of-type{margin-left:auto}
+.finder-context-head button:disabled{opacity:.4;cursor:default;text-decoration:none}
+.finder-conditions{display:flex;flex-wrap:wrap;gap:5px;max-height:86px;overflow:auto;padding:2px}
+.finder-conditions button{font:inherit;font-size:12px;color:#405444;border:1px solid #d6d8c9;background:#f1f2e8;border-radius:3px;padding:5px 8px;min-height:30px;max-width:100%;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;cursor:pointer}
+.finder-pending{font-size:13px;padding:8px 10px;margin:5px 0 10px;border-left:2px solid #a85c42;background:#f4f0e5;overflow-wrap:anywhere}
+.finder-empty-cta{display:block;margin-top:10px;padding:10px 14px;min-height:40px;background:#a84c32;border:1px solid #87422e;box-shadow:2px 2px 0 #d8c7bb;border-radius:3px;color:#fffdf5;text-align:center;font-size:13px;text-decoration:none;font-weight:600}
+.finder-empty-cta:hover{background:#923d27}
+@media(max-width:760px){#finder-context{padding:0 14px 8px}.finder-conditions{max-height:70px}.finder-conditions button{font-size:11px}.finder-empty-cta{font-size:13px}#finder-clear{font-size:11px;max-width:62px;line-height:1.4}}
+
+/* One session, a direct homepage entry and a global non-modal companion. */
+#finder-drawer{position:fixed;z-index:110;left:auto;right:0;top:var(--drawer-top,0px);bottom:auto;transform:none;width:min(410px,100%);height:var(--drawer-height,100dvh);max-height:none;margin:0;border:0;border-left:1px solid #bbbbaa;border-radius:0;background:#fffdf5;box-shadow:-8px 0 30px #27382e18;display:flex;flex-direction:column;animation:finder-enter 180ms ease-out;overflow:hidden}
+#finder-drawer[hidden],#finder-launcher[hidden]{display:none!important}
+.finder-drawer-head{display:flex;gap:8px;align-items:center;padding:22px 18px 16px;border-bottom:1px solid #dedbd0;flex-shrink:0}
+.finder-drawer-head h2{font-size:17px;margin:0 auto 0 0;color:#344937}
+#finder-drawer #finder-context{padding:12px 18px 10px;flex-shrink:0}
+#finder-drawer #finder-panel{display:flex;flex-direction:column;flex:1;min-height:0;border:0;overflow:hidden}
+#finder-drawer .finder-panel-head{padding:10px 18px}
+#finder-drawer #finder-scroll{flex:1;max-height:none;min-height:0;padding:0 18px 20px;overflow:auto}
+.finder-message{padding:12px 14px;background:#eeefe3;border:1px solid #d8dccc;border-radius:4px;margin:2px 0 16px;line-height:1.6;font-size:14px;color:#344937;overflow-wrap:anywhere}
+#finder-drawer #finder-form{flex-shrink:0;border-top:1px solid #dedbd0;padding:14px 16px max(16px,env(safe-area-inset-bottom));background:#f8f6ee}
+#finder-drawer #finder-input{font-size:14px}
+#finder-drawer .finder-third-result{display:list-item}
+#finder-drawer #finder-resume{display:none}
+#finder-resume{display:block;max-width:calc(100% - 30px);text-align:left;overflow-wrap:anywhere;line-height:1.6;margin-top:8px;font-size:14px}
+#finder-launcher{position:fixed;right:24px;bottom:24px;z-index:90;border:1px solid #7f886f;border-radius:5px;background:#fffdf5;color:#344937;box-shadow:3px 3px 0 #c8cbb580;padding:13px 18px;min-height:44px;font:inherit;font-size:14px;cursor:pointer}
+#finder-launcher:hover{background:#eeefe3}
+#finder-launcher:focus-visible{outline:2px solid #526b56;outline-offset:3px}
+@keyframes finder-enter{from{transform:translateX(32px);opacity:0}to{transform:translateX(0);opacity:1}}
+@media(max-width:760px){#finder-drawer{width:100%;border-left:0}#finder-drawer #finder-input{font-size:16px}.finder-drawer-head{padding-top:max(16px,env(safe-area-inset-top))}#finder-launcher{right:16px;bottom:16px}}
+@media(prefers-reduced-motion:reduce){#finder-drawer{animation:none}}
+#finder-home-reset{margin:0 16px 10px;padding:4px 5px;min-height:28px;border:0;background:transparent;color:#68725f;font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* A quiet conversation: user messages, grounded replies, and inline results. */
+#finder-drawer{width:min(440px,100%)}
+#finder-drawer .finder-drawer-head{padding:18px 20px;border-bottom:1px solid #e8e5db}
+#finder-drawer #finder-clear,#finder-drawer #finder-close{width:34px;height:34px;max-width:none;font-size:24px;color:#697565;text-decoration:none;border-radius:4px}
+#finder-drawer #finder-clear:hover,#finder-drawer #finder-close:hover{background:#efefe6}
+#finder-drawer #finder-scroll{padding:24px 20px;scroll-behavior:auto}
+.finder-turn{margin:0 0 32px}
+.finder-user{display:flex;flex-direction:column;align-items:flex-end;margin:0 0 20px}
+.finder-user-message{max-width:88%;margin:0;padding:10px 14px;border-radius:10px 10px 3px 10px;background:#eceedf;color:#354332;font-size:14px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+.finder-edit{border:0;background:none;color:#727b6e;font:inherit;font-size:11px;padding:4px 2px;min-height:24px;opacity:0;cursor:pointer}
+.finder-user:hover .finder-edit,.finder-edit:focus-visible{opacity:1}
+.finder-speaker{display:block;font-size:11px;font-weight:600;color:#718069;margin-bottom:8px}
+.finder-assistant-heading{font-size:14px;line-height:1.7;margin:0 0 12px;color:#354332}
+.finder-response .finder-result-list{border:1px solid #e0e2d5;border-radius:6px;overflow:hidden;background:#fbfaf4}
+.finder-response .finder-result-card{display:block;padding:12px;text-decoration:none;border-bottom:1px solid #e6e7de}
+.finder-response li:last-child .finder-result-card{border-bottom:0}
+.finder-response .finder-result-card strong{font-size:13px}
+.finder-response .finder-result-card:hover{background:#eef0e5}
+.finder-suggestions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.finder-suggestions button{font:inherit;font-size:12px;line-height:1.5;color:#4c6148;border:1px solid #d6dccd;background:transparent;border-radius:5px;padding:7px 10px;cursor:pointer}
+.finder-actions .finder-more{gap:2px 12px;margin-top:6px}
+.finder-actions a{font-size:12px;color:#596e52}
+.finder-welcome{padding-top:24px;color:#354332}
+.finder-welcome h3{font-size:20px;font-weight:600;margin:0 0 12px}
+.finder-welcome p{font-size:14px;line-height:1.8;color:#707a68}
+#finder-input{resize:none;box-sizing:border-box;line-height:1.6;min-height:38px;max-height:128px;overflow-y:auto}
+#finder-send{background:#3e563c;border-color:#3e563c;border-radius:5px;box-shadow:none;color:#fffdf5}
+#finder-send:hover{background:#31482f}
+#finder-send:disabled{background:#e1e4d9;color:#939b8b;border-color:#e1e4d9;cursor:default}
+#finder-drawer #finder-form{margin:0 16px max(16px,env(safe-area-inset-bottom));padding:10px 12px;gap:10px;align-items:flex-end;border:1px solid #ccd3c1;border-radius:10px;background:#fffdf7;box-shadow:0 2px 8px #34493708}
+#finder-drawer #finder-form:focus-within{border-color:#7f9275;box-shadow:0 0 0 2px #526b560c}
+#finder-drawer #finder-send{min-width:32px;width:32px;height:32px;padding:0;font-size:22px;border-radius:6px;margin-bottom:3px}
+#finder-drawer #finder-input{font-size:14px;min-height:38px}
+#finder-drawer:focus-within{box-shadow:-8px 0 30px #27382e18}
+@media(max-width:760px){#finder-drawer{width:100%}#finder-drawer #finder-input{font-size:16px}#finder-drawer #finder-scroll{padding:18px 16px}.finder-edit{opacity:1}}
+.finder-edit-notice{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 20px;font-size:11px;color:#6a7863;flex-shrink:0}
+.finder-edit-notice button{border:0;background:none;color:#4b6044;font:inherit;min-height:28px;text-decoration:underline;cursor:pointer}
+
+/* Quiet but discoverable empty-state action and a full-size composer. */
+.finder-actions .finder-save-problem{display:inline-flex;align-items:center;justify-content:center;min-height:40px;margin-top:12px;padding:8px 14px;border:1px solid #9daa91;border-radius:5px;background:#eef1e5;color:#3f5539;text-decoration:none;font-size:13px;font-weight:600}
+.finder-actions .finder-save-problem:hover{background:#e1e8d6}
+#finder-drawer #finder-form{position:relative;display:block;padding:12px 14px 44px;min-height:116px;box-sizing:border-box}
+#finder-drawer #finder-input{display:block;width:100%;min-height:56px;max-height:160px;padding:0;font-size:14px}
+#finder-drawer #finder-send{position:absolute;right:12px;bottom:9px;margin:0}
+#finder-drawer #finder-form:after{content:'Enter 发送 · Shift+Enter 换行';position:absolute;left:14px;bottom:15px;font-size:10px;color:#75806d;pointer-events:none}
+html[lang=en] #finder-drawer #finder-form:after{content:'Enter to send · Shift+Enter for a new line'}
+@media(max-width:760px){#finder-drawer #finder-form{min-height:100px}#finder-drawer #finder-input{min-height:40px;font-size:16px}#finder-drawer #finder-form:after{content:none}}
+#app-load-status{position:fixed;left:20px;bottom:20px;z-index:150;max-width:calc(100vw - 40px);padding:14px 18px;background:#fffdf5;border:1px solid #a8b09b;box-shadow:0 4px 20px #34493720;border-radius:5px;font-size:14px;color:#344937}
+#app-load-status[hidden]{display:none}
+#app-load-status button{margin-left:12px;min-height:36px;background:#edf0e4;border:1px solid #87967b;padding:6px 12px;color:#344937;border-radius:4px;cursor:pointer}
+/* A recognizable assistant invitation, shared with the global conversation. */
+.assistant-avatar{object-fit:contain;flex-shrink:0;width:40px;height:40px}
+#finder>.assistant-avatar{position:absolute;top:15px;left:18px;width:44px;height:44px}
+#finder .finder-entry-label{padding:16px 20px 0 76px;font-size:15px}
+.finder-invitation{margin:5px 20px 12px 76px;font-size:12px;line-height:1.6;color:#6a7663;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#finder>#finder-form{margin:0 18px 10px;padding:9px 12px;border:1px solid #d7ddcd;border-radius:6px;align-items:flex-end;background:#fbfcf6}
+#finder>#finder-form #finder-input{min-height:44px;font-size:14px}
+#finder>#finder-form #finder-send{min-width:92px;font-size:12px}
+#finder .finder-examples{padding:0 20px 12px}
+#finder-resume{display:inline-block;margin:0 12px 16px 76px;padding:7px 12px;background:#e9eee1;border:1px solid #bac7ac;border-radius:4px;text-decoration:none;font-size:13px;min-height:36px}
+#finder-home-new{border:0;background:transparent;font:inherit;font-size:12px;color:#68765f;min-height:36px;padding:5px;cursor:pointer}
+#finder-drawer .assistant-avatar{width:32px;height:32px}
+#finder-launcher{display:flex;align-items:center;gap:8px;padding:8px 13px}
+#finder-launcher .assistant-avatar{width:30px;height:30px}
+@media(max-width:760px){#finder>.assistant-avatar{left:12px;top:12px;width:38px;height:38px}#finder .finder-entry-label{padding:13px 14px 0 60px}.finder-invitation{margin-left:60px;margin-right:14px;font-size:11px}#finder>#finder-form{margin-left:12px;margin-right:12px}#finder>#finder-form #finder-input{font-size:16px}#finder>#finder-form #finder-send{min-width:76px;padding:0 7px}#finder-resume{margin-left:16px}}
+/* Choice-oriented result cards use recorded facts, not invented claims. */
+.finder-response .finder-result-list{border:0;background:none;overflow:visible}
+.finder-response .finder-result-list li+li{margin-top:12px}
+.finder-response .finder-result-card{border:1px solid #dce1d2!important;border-radius:6px;padding:14px;background:#fbfcf6}
+.finder-response .finder-result-card .finder-description{display:block;-webkit-line-clamp:unset;font-size:12px;line-height:1.7;margin-top:8px}
+.finder-card-facts{border-top:1px solid #e3e7da;margin:12px 0 0;padding-top:10px;display:grid;gap:7px;font-size:11px;line-height:1.65;color:#53644b}
+.finder-card-fact{display:grid;grid-template-columns:60px minmax(0,1fr);gap:8px}
+.finder-card-facts dt{color:#77816e}
+.finder-card-facts dd{margin:0;overflow-wrap:anywhere}
+html[lang=en] .finder-card-fact{grid-template-columns:76px minmax(0,1fr)}
+.finder-result-top{display:flex;gap:12px;align-items:flex-start}
+.finder-result-thumb{width:56px;height:56px;flex:0 0 56px;object-fit:cover;border-radius:5px;border:1px solid #e1e5d8;background:#f2f3eb}
+.finder-result-thumb.is-person{border-radius:50%}
+.finder-result-summary{min-width:0;flex:1}
+.finder-looking{font-size:13px;line-height:1.7;color:#6c7a62;padding:6px 0 18px;animation:finder-breathe 900ms ease-in-out infinite alternate}
+@keyframes finder-breathe{from{opacity:.55}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.finder-looking{animation:none}}
+
+/* Shared type palette for readable tags and image-free editorial covers. */
+.finder-result-card [data-tone]{--card-ink:#465d47;--card-paper:#e6eddf}
+.finder-result-card [data-tone=desktop]{--card-ink:#385d78;--card-paper:#e3edf5}
+.finder-result-card [data-tone=bot]{--card-ink:#685184;--card-paper:#eee6f4}
+.finder-result-card [data-tone=extension]{--card-ink:#37665c;--card-paper:#e0eee7}
+.finder-result-card [data-tone=skill]{--card-ink:#7b6030;--card-paper:#f3ead1}
+.finder-result-card [data-tone=local]{--card-ink:#536478;--card-paper:#e7ebf0}
+.finder-result-card [data-tone=other]{--card-ink:#825742;--card-paper:#f3e5db}
+.finder-result-card [data-tone=story]{--card-ink:#876029;--card-paper:#f5ead4}
+.finder-result-card [data-tone=maker]{--card-ink:#526841;--card-paper:#e7eddc}
+.finder-result-card .finder-card-heading{flex-wrap:wrap;align-items:center;gap:6px 8px}
+.finder-result-card .finder-kind{margin-left:0;padding:2px 7px;border-radius:4px;background:var(--card-paper);color:var(--card-ink);font-size:10px;line-height:1.6;font-weight:500}
+.finder-result-cover{position:relative;display:flex;align-items:center;justify-content:center;width:64px;height:64px;flex:0 0 64px;overflow:hidden;border-radius:5px;background:var(--card-paper);color:var(--card-ink);border:1px solid #34493712;box-sizing:border-box}
+.finder-result-cover:before{content:'';position:absolute;inset:5px;border:1px solid currentColor;opacity:.16;transform:rotate(-5deg)}
+.finder-cover-word{padding:8px;max-height:58px;overflow:hidden;text-align:center;font-size:12px;line-height:1.4;font-weight:700;overflow-wrap:anywhere;white-space:pre-line;transform:rotate(-4deg)}
+.finder-result-cover .finder-result-thumb{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;object-fit:cover}
+.finder-result-cover.is-person{border-radius:50%}
+.finder-response .finder-result-card:hover{background:#f1f4eb;box-shadow:0 2px 8px #3449370a}
+.finder-response .finder-result-card:focus-visible{outline:2px solid #526b56;outline-offset:3px}
+
+/* The resume button owns the whole invitation card as one native hit target. */
+#finder-resume{position:static;background:transparent;border:0;padding:7px 0;box-shadow:none}
+#finder-resume:not([hidden]):after{content:'';position:absolute;inset:0;z-index:1;border-radius:inherit;cursor:pointer}
+#finder:has(#finder-resume:not([hidden])):hover{background:#f5f7ee;border-color:#657c59;box-shadow:5px 5px 0 #c8cbb580,0 0 0 1px #657c5914}
+#finder-resume:focus-visible{outline:none}
+#finder:has(#finder-resume:focus-visible){outline:2px solid #526b56;outline-offset:3px}
+
+/* One shared rail prevents floating actions from covering each other. */
+.floating-tools{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:90;display:flex;flex-direction:column;gap:10px}
+.floating-tools #finder-launcher,.floating-tools .floating-back{position:static;display:flex;align-items:center;justify-content:flex-start;gap:8px;width:132px;height:48px;min-height:48px;padding:8px 12px;margin:0;border:1px solid #7f886f;border-radius:5px;background:#fffdf5;color:#344937;box-shadow:3px 3px 0 #c8cbb580;font:inherit;font-size:13px;line-height:1.4;text-decoration:none;cursor:pointer}
+.floating-tools [hidden]{display:none!important}
+.floating-tools .floating-tool-icon,.floating-tools #finder-launcher .assistant-avatar{width:28px;height:28px;flex:0 0 28px;display:grid;place-items:center;font-size:24px;line-height:1}
+.floating-tools #finder-launcher:hover,.floating-tools .floating-back:hover{background:#eeefe3;border-color:#526b56}
+.floating-tools #finder-launcher:focus-visible,.floating-tools .floating-back:focus-visible{outline:2px solid #526b56;outline-offset:3px}
+html[lang=en] .floating-tools #finder-launcher,html[lang=en] .floating-tools .floating-back{width:176px}
+@media(max-width:760px){.floating-tools{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));gap:8px}}
+
+/* Compact icon-only floating actions; labels remain available to assistive tech. */
+.floating-tools #finder-launcher,.floating-tools .floating-back,html[lang=en] .floating-tools #finder-launcher,html[lang=en] .floating-tools .floating-back{width:48px;height:48px;min-height:48px;border-radius:50%;padding:8px;justify-content:center;gap:0;box-shadow:0 2px 8px #34493718}
+.floating-tools #finder-launcher>span,.floating-tools .floating-back>span:not(.floating-tool-icon){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.floating-tools #finder-launcher .assistant-avatar{width:30px;height:30px;flex-basis:30px}
+
+/* Align the assistant header with the site's navigation. */
+#finder-drawer .finder-drawer-head{height:var(--site-header-height,68px);min-height:var(--site-header-height,68px);box-sizing:border-box;padding:0 20px;align-items:center}
+#finder-drawer #finder-close{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;min-height:36px;padding:0;line-height:1}
+.finder-close-icon{display:block;position:relative;width:18px;height:18px;pointer-events:none}
+.finder-close-icon:before,.finder-close-icon:after{content:'';position:absolute;left:1px;top:8px;width:16px;height:2px;border-radius:1px;background:currentColor;transform:rotate(45deg)}
+.finder-close-icon:after{transform:rotate(-45deg)}

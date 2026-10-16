@@ -1,5 +1,7 @@
 # allsome · 有点东西
 
+[打开在线演示](https://jingyuan0199.github.io/allsome-demo/)
+
 作品集交互演示：体验发现作品、阅读制作分享，以及辅助预填、编辑和预览投稿的完整流程。
 
 ## 运行

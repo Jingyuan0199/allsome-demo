@@ -172,7 +172,7 @@ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n
 for(const el of document.querySelectorAll('[placeholder],[aria-label]')){let map=attrs.get(el)||{};for(const key of ['placeholder','aria-label']){if(!el.hasAttribute(key)||el.closest('[data-no-translate]'))continue;let e=map[key];const current=el.getAttribute(key);if(!e||current!==e.rendered)e={original:current};const value=lang==='en'?translate(e.original):e.original;if(current!==value)el.setAttribute(key,value);e.rendered=value;map[key]=e;}attrs.set(el,map);}
 const shareLabel=document.querySelector('.header-share-label');if(shareLabel)shareLabel.textContent=lang==='en'?'Share':'分享好东西';
 const button=document.querySelector('#language-toggle');button.textContent=lang==='en'?'中文':'EN';button.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');button.lang=lang==='en'?'zh-CN':'en';
-document.querySelector('.brand-image').setAttribute('aria-hidden',String(lang==='en'));document.querySelector('.brand-en').setAttribute('aria-hidden',String(lang!=='en')); 
+document.querySelector('.brand-image').setAttribute('aria-hidden',String(lang==='en'));document.querySelector('.brand-en').setAttribute('aria-hidden',String(lang!=='en'));
 observer.observe(document.body,{subtree:true,childList:true,characterData:true});}
 const observer=new MutationObserver(()=>{apply()});
 document.querySelector('#language-toggle').addEventListener('click',()=>{
